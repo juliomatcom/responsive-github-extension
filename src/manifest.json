@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "github responsive",
+  "name": "Responsive Github",
   "version": "1.0.0",
   "description": "Made github for Desktop more responsive, so you can split your screen :D",
   "icons": {
@@ -14,7 +14,7 @@
       "js": ["main.js"]
     }
   ],
-  "homepage_url": "https://github.com/juliomatcom/github-responsive-extension",
+  "homepage_url": "https://github.com/juliomatcom/responsive-github-extension",
   "permissions": [
     "activeTab",
     "https://github.com/*"
