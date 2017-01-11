@@ -5,19 +5,28 @@ var ge = document.querySelector.bind(document)
 var ga = document.querySelectorAll.bind(document)
 var body = ge('body')
 var containers = ga('.container')
+var repoAjaxContainerElm = ge('#js-repo-pjax-container')
+var mdElm = ge('.markdown-body')
 
 // Adjust elements
 body.style.minWidth = minDeviceWidth
 
-adjustMarkdown(ge('.markdown-body'))
+if (mdElm) {
+  adjustMarkdown(mdElm)
+}
 
 adjustElements(containers)
 
-ge('#js-repo-pjax-container').addEventListener('DOMNodeInserted', function(){
-  var containersUpdated = ga('.container')
-  adjustElements(containersUpdated)
-  adjustMarkdown(ge('.markdown-body'))
-})
+if (repoAjaxContainerElm) {
+  repoAjaxContainerElm.addEventListener('DOMNodeInserted', function(){
+    var containersUpdated = ga('.container')
+    var mdUpdated = ge('.markdown-body')
+    adjustElements(containersUpdated)
+    if (mdUpdated) {
+      adjustMarkdown(mdUpdated)
+    }
+  })
+}
 
 function adjustElements(elements) {
   elements.forEach(adjust)
@@ -29,7 +38,5 @@ function adjust(elem) {
 }
 
 function adjustMarkdown(elm) {
-  if (elm) {
-    elm.style.padding = markdownPadding
-  }
+  elm.style.padding = markdownPadding
 }
