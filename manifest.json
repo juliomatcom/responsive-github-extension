@@ -14,7 +14,7 @@
       "js": ["main.js"]
     }
   ],
-  "homepage_url": "http://path/to/homepage",
+  "homepage_url": "https://github.com/juliomatcom/github-responsive-extension",
   "permissions": [
     "activeTab",
     "https://github.com/*"
