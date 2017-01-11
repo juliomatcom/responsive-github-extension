@@ -1,5 +1,5 @@
 # Responsive Github Extension
-Make github for Desktop more responsive, so you can split your screen.
+Make github.com for Desktop more responsive, so you can split your screen.
 
 ![](responsive_view.png)
 
