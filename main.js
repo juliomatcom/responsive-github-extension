@@ -13,7 +13,16 @@ if (markdownBodyEl) {
   markdownBodyEl.style.padding = markdownPadding
 }
 
-containers.forEach(adjust)
+adjustElements(containers);
+
+ge('#js-repo-pjax-container').addEventListener('DOMNodeInserted', function(){
+  var containersUpdated = ga('.container');
+  adjustElements(containersUpdated);
+})
+
+function adjustElements(elements) {
+  elements.forEach(adjust)
+}
 
 function adjust(elem) {
   var style = getComputedStyle(elem)
