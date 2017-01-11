@@ -4,7 +4,7 @@ var ge = document.querySelector.bind(document)
 var ga = document.querySelectorAll.bind(document)
 var body = ge('body')
 var markdownBodyEl = ge('.markdown-body')
-var containers = ga('.container');
+var containers = ga('.container')
 
 // Adjust elements
 body.style.minWidth = minDeviceWidth
@@ -13,11 +13,11 @@ if (markdownBodyEl) {
   markdownBodyEl.style.padding = markdownPadding
 }
 
-adjustElements(containers);
+adjustElements(containers)
 
 ge('#js-repo-pjax-container').addEventListener('DOMNodeInserted', function(){
-  var containersUpdated = ga('.container');
-  adjustElements(containersUpdated);
+  var containersUpdated = ga('.container')
+  adjustElements(containersUpdated)
 })
 
 function adjustElements(elements) {
